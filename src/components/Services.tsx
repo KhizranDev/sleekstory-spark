@@ -88,7 +88,7 @@ const Services = () => {
       title: "Digital Transformation",
       description: "Navigate the digital landscape with innovative solutions that modernize your business processes.",
       icon: <SquareCode size={40} />,
-      image: "https://images.unsplash.com/photo-1581092160562-40aa08e78252?q=80&w=2070"
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=1770"
     },
     {
       title: "Financial Modeling",
