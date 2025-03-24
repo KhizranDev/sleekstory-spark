@@ -75,7 +75,7 @@
   }
   
   .service-card {
-    @apply bg-white rounded-xl p-6 shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-100;
+    @apply bg-white rounded-xl p-6 shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-100 relative overflow-hidden;
   }
   
   .case-study-card {
