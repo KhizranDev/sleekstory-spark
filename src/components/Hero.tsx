@@ -1,6 +1,32 @@
 
 import React, { useEffect, useRef } from 'react';
 import { ChevronDown } from 'lucide-react';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious
+} from "@/components/ui/carousel";
+
+const bannerImages = [
+  {
+    url: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070",
+    alt: "Business strategy meeting"
+  },
+  {
+    url: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070",
+    alt: "Financial analysis"
+  },
+  {
+    url: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070",
+    alt: "Team collaboration"
+  },
+  {
+    url: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015",
+    alt: "Market research"
+  }
+];
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -29,17 +55,33 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative h-screen flex items-center overflow-hidden bg-gradient-to-b from-btb-lightest to-white">
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full bg-grid-pattern opacity-5"></div>
-      </div>
+    <section className="relative h-screen flex items-center overflow-hidden">
+      <Carousel className="w-full h-full absolute top-0 left-0" opts={{ loop: true }}>
+        <CarouselContent className="h-full">
+          {bannerImages.map((image, index) => (
+            <CarouselItem key={index} className="h-full">
+              <div className="relative w-full h-full">
+                <div 
+                  className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
+                  style={{backgroundImage: `url(${image.url})`}}
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-btb-navy/80 to-btb-navy/40" />
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <div className="absolute bottom-8 right-8 z-20 flex gap-2">
+          <CarouselPrevious className="relative h-10 w-10 rounded-full bg-white/30 hover:bg-white/50 text-white border-0" />
+          <CarouselNext className="relative h-10 w-10 rounded-full bg-white/30 hover:bg-white/50 text-white border-0" />
+        </div>
+      </Carousel>
       
       <div ref={heroRef} className="container mx-auto px-6 z-10 stagger-animate">
         <div className="max-w-4xl">
-          <h1 className="text-5xl md:text-7xl font-bold text-btb-navy mb-6 leading-tight tracking-tight">
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight tracking-tight drop-shadow-md">
             Strategic Solutions for Business Transformation
           </h1>
-          <p className="text-xl md:text-2xl text-gray-600 mb-10 max-w-2xl">
+          <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl drop-shadow">
             We guide organizations through complex challenges with innovative strategies and actionable insights.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
@@ -51,7 +93,7 @@ const Hero = () => {
             </a>
             <a
               href="#services"
-              className="px-8 py-3 rounded-full border border-btb-navy text-btb-navy hover:bg-btb-navy hover:text-white transition-all duration-300 text-center transform hover:-translate-y-1"
+              className="px-8 py-3 rounded-full border border-white text-white hover:bg-white hover:text-btb-navy transition-all duration-300 text-center transform hover:-translate-y-1"
             >
               Explore Services
             </a>
@@ -61,7 +103,7 @@ const Hero = () => {
       
       <button 
         onClick={scrollToServices}
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-btb-navy animate-float"
+        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-white animate-bounce z-10"
         aria-label="Scroll down"
       >
         <span className="text-sm font-medium mb-2">Scroll to explore</span>
