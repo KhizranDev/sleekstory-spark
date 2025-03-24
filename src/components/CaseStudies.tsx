@@ -12,7 +12,7 @@ interface CaseStudyProps {
 
 const CaseStudy: React.FC<CaseStudyProps> = ({ title, category, image, slug }) => {
   return (
-    <Link to={`/case-study/${slug}`} className="case-study-card block h-96">
+    <Link to={`/case-study/${slug}`} className="case-study-card group block h-96">
       <div className="absolute inset-0">
         <img 
           src={image} 

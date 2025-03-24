@@ -79,7 +79,7 @@
   }
   
   .case-study-card {
-    @apply relative overflow-hidden rounded-xl shadow-md transition-all duration-300 hover:shadow-xl group;
+    @apply relative overflow-hidden rounded-xl shadow-md transition-all duration-300 hover:shadow-xl;
   }
   
   .nav-link {
