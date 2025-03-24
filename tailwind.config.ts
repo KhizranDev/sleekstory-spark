@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -24,6 +25,13 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				btb: {
+					navy: '#2B4570',
+					blue: '#4D7EB0',
+					light: '#A3C6F0',
+					lightest: '#E5EFF9',
+					accent: '#33C3F0',
+				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
@@ -84,11 +92,51 @@ export default {
 					to: {
 						height: '0'
 					}
-				}
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(10px)',
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)',
+					},
+				},
+				'fade-in-right': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateX(-20px)',
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateX(0)',
+					},
+				},
+				'endless-line': {
+					'0%': {
+						transform: 'translateY(0%)',
+					},
+					'100%': {
+						transform: 'translateY(-100%)',
+					},
+				},
+				'float': {
+					'0%, 100%': {
+						transform: 'translateY(0)',
+					},
+					'50%': {
+						transform: 'translateY(-10px)',
+					},
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.7s ease-out forwards',
+				'fade-in-right': 'fade-in-right 0.7s ease-out forwards',
+				'endless-line': 'endless-line 12s linear infinite',
+				'float': 'float 6s ease-in-out infinite',
 			}
 		}
 	},
