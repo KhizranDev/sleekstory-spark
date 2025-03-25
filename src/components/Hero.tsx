@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Sparkles, Zap } from 'lucide-react';
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -30,8 +30,18 @@ const Hero = () => {
 
   return (
     <section className="relative h-screen flex items-center overflow-hidden">
-      {/* Solid color background with gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-btb-navy to-btb-blue/90" />
+      {/* Animated background elements */}
+      <div className="absolute inset-0 bg-gradient-to-br from-btb-navy to-btb-blue/90">
+        <div className="absolute top-20 left-[10%] animate-float opacity-70">
+          <Sparkles className="text-white/30" size={32} />
+        </div>
+        <div className="absolute bottom-40 right-[15%] animate-float opacity-50" style={{ animationDelay: '2s' }}>
+          <Sparkles className="text-white/30" size={48} />
+        </div>
+        <div className="absolute top-1/3 right-[20%] animate-float opacity-60" style={{ animationDelay: '3s' }}>
+          <Zap className="text-btb-accent/40" size={40} />
+        </div>
+      </div>
       
       <div ref={heroRef} className="container mx-auto px-6 z-10 stagger-animate">
         <div className="max-w-4xl">
@@ -44,9 +54,12 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4">
             <a
               href="#contact"
-              className="px-8 py-3 rounded-full bg-white text-btb-navy hover:bg-btb-lightest transition-all duration-300 text-center transform hover:-translate-y-1 shadow-lg hover:shadow-xl font-medium"
+              className="px-8 py-3 rounded-full bg-white text-btb-navy hover:bg-btb-lightest transition-all duration-300 text-center transform hover:-translate-y-1 shadow-lg hover:shadow-xl font-medium group"
             >
-              Start a Project
+              <span className="inline-flex items-center">
+                Start a Project
+                <Zap size={16} className="ml-2 text-btb-accent transition-transform group-hover:rotate-12" />
+              </span>
             </a>
             <a
               href="#services"
