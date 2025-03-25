@@ -84,7 +84,7 @@ const CaseStudies = () => {
     {
       title: "Operational Efficiency for Manufacturing Company",
       category: "Operations",
-      image: "https://images.unsplash.com/photo-1565951565704-da11451375ae?q=80&w=2070",
+      image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=2070",
       slug: "operational-efficiency"
     }
   ];
