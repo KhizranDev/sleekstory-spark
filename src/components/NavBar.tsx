@@ -41,13 +41,17 @@ const NavBar = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-1">
-          <a href="#services" className="nav-link">Services</a>
-          <a href="#case-studies" className="nav-link">Case Studies</a>
-          <a href="#about" className="nav-link">Our Story</a>
-          <a href="#contact" className="nav-link">Contact</a>
+          <a href="#services" className={`nav-link ${!isScrolled ? 'text-white font-medium' : 'text-gray-700'}`}>Services</a>
+          <a href="#case-studies" className={`nav-link ${!isScrolled ? 'text-white font-medium' : 'text-gray-700'}`}>Case Studies</a>
+          <a href="#about" className={`nav-link ${!isScrolled ? 'text-white font-medium' : 'text-gray-700'}`}>Our Story</a>
+          <a href="#contact" className={`nav-link ${!isScrolled ? 'text-white font-medium' : 'text-gray-700'}`}>Contact</a>
           <a 
             href="#contact" 
-            className="ml-4 px-5 py-2 rounded-full bg-btb-navy text-white hover:bg-btb-blue transition-colors duration-300"
+            className={`ml-4 px-5 py-2 rounded-full transition-colors duration-300 ${
+              !isScrolled 
+                ? 'bg-white text-btb-navy hover:bg-btb-lightest' 
+                : 'bg-btb-navy text-white hover:bg-btb-blue'
+            }`}
           >
             Get Started
           </a>
@@ -55,7 +59,9 @@ const NavBar = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-gray-700 hover:text-btb-navy transition-colors"
+          className={`md:hidden transition-colors ${
+            !isScrolled ? 'text-white hover:text-btb-lightest' : 'text-gray-700 hover:text-btb-navy'
+          }`}
           onClick={toggleMenu}
           aria-label="Toggle Menu"
         >
